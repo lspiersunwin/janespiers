@@ -1,0 +1,222 @@
+@import 'config';
+@import 'utilities';
+@import 'item_grid';
+
+//General styles
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background: $main-color;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  transition: all 0.5s;
+  border: none;
+  cursor: pointer;
+  color: $dark-color;
+  background-color: $main-color;
+}
+
+.btn:hover {
+  background-color: $medium-color;
+}
+
+ul {
+  list-style: none;
+}
+
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+
+img {
+  width: 100%;
+}
+
+// LOGO
+#logo {
+  width: 60px;
+  height: 90px;
+  color: #fff;
+}
+
+// MAIN NAV
+#main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    padding: 1rem 1.5rem;
+  }
+
+  a {
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: $dark-color;
+    text-transform: uppercase;
+    border-bottom: 3px transparent solid;
+    padding-bottom: 0.5rem;
+    transition: border-color 0.5s;
+
+    &:hover {
+      border-color: $main-color;
+    }
+
+    &.current {
+      border-color: $main-color;
+    }
+  }
+}
+
+// HEADER
+#header {
+  // header home
+  &-home {
+    background: $bg-image no-repeat center right / cover;
+    height: 100vh;
+    color: black;
+
+    // header content
+    .header-content {
+      text-align: center;
+      padding-top: 23%;
+
+      h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+      }
+    }
+  }
+
+  &-inner {
+    background: $bg-image no-repeat 20% 30% / cover;
+    height: 8rem;
+    border-bottom: 3px solid $main-color;
+  }
+}
+
+// ABOUT
+#about {
+  &-a {
+    .about-info {
+      display: grid;
+      grid-template-areas: 'bioimage bio bio';
+      grid-gap: 1.2rem;
+    }
+
+    Grid Area .bio-image {
+      grid-area: bioimage;
+    }
+    .bio {
+      grid-area: bio;
+      border-left: 3px solid $medium-color;
+    }
+  }
+}
+
+// CONTACT
+#contact {
+  &-a {
+    .text-fields {
+      display: grid;
+      grid-template-areas:
+        'name email'
+        'subject phone'
+        'message message';
+      grid-gap: 1.2rem;
+      margin-bottom: 1.2rem;
+
+      // Grid areas
+      .name-input {
+        grid-area: name;
+      }
+      .subject-input {
+        grid-area: subject;
+      }
+      .email-input {
+        grid-area: email;
+      }
+      .phone-input {
+        grid-area: phone;
+      }
+      .message-input {
+        grid-area: message;
+        height: 100px;
+      }
+
+      .text-input {
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    button[type='submit'] {
+      width: 50%;
+      background: $medium-color;
+    }
+  }
+
+  &-b {
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+    }
+  }
+
+  &-c {
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+// FOOTER
+#main-footer {
+  background: $medium-color;
+  color: $dark-color;
+  height: 5rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  height: 5rem;
+  align-items: center;
+}
+
+.social .fab {
+  margin-right: 1rem;
+  border: 2px $main-color solid;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  text-align: center;
+  padding: 0.5rem;
+
+  &:hover {
+    background: $main-color;
+  }
+}
+
+@import 'media';
