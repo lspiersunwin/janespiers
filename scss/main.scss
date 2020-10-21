@@ -2,6 +2,22 @@
 @import 'utilities';
 @import 'item_grid';
 
+@media screen and (min-width: 768px) {
+  #header {
+    &-home {
+      background: $bg-image;
+    }
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 767px) {
+  #header {
+    &-home {
+      background: $main-color;
+    }
+  }
+}
+
 //General styles
 * {
   margin: 0;
@@ -20,6 +36,7 @@ a {
 }
 
 .btn {
+  margin-top: 2rem;
   display: inline-block;
   padding: 0.8rem 2rem;
   transition: all 0.5s;
@@ -31,6 +48,21 @@ a {
 
 .btn:hover {
   background-color: $medium-color;
+}
+
+.btn-2 {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  transition: all 0.5s;
+  border: none;
+  cursor: pointer;
+  color: $dark-color;
+  background-color: $medium-color;
+}
+
+.btn-2:hover {
+  background-color: $main-color;
 }
 
 ul {
@@ -92,7 +124,9 @@ img {
 #header {
   // header home
   &-home {
-    background: $bg-image no-repeat center right / cover;
+    background: $bg-image no-repeat;
+    background-size: cover;
+    width: 100%;
     height: 100vh;
     color: $main-color;
 
@@ -109,7 +143,7 @@ img {
   }
 
   &-inner {
-    background: $bg-image no-repeat 20% 30% / cover;
+    background: $nav-image no-repeat 20% 30% / cover;
     height: 8rem;
     border-bottom: 3px solid $main-color;
   }
@@ -167,6 +201,7 @@ img {
       .text-input {
         padding: 0.5rem 1rem;
       }
+      
     }
 
     button[type='submit'] {
@@ -180,6 +215,7 @@ img {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       text-align: center;
+      
     }
   }
 
@@ -187,6 +223,11 @@ img {
     h1 {
       text-align: center;
     }
+    background: $contact;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    
   }
 }
 
