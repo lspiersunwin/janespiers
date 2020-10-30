@@ -74,7 +74,8 @@
 .item {
   position: relative;
   background: #2a9d8f;
-  overflow: hidden; }
+  overflow: hidden;
+  margin: 5px 5px 5px 5px; }
   .item::after {
     content: '';
     position: absolute;
